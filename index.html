@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
@@ -874,6 +874,8 @@
       </div>
     </div>
     <div id="controls">
+      <a href="https://osu.ppy.sh/" target="_blank"><button>osu官网</button></a>
+      <a href="https://osu.sayobot.cn/" target="_blank"><button>osu镜像站</button></a>
       <button id="beatmap-btn" class="primary">选择难度</button>
       <button id="load-btn">导入谱面</button>
       <button id="rock-btn" class="rock">摇滚模式: 关</button>
@@ -1261,6 +1263,7 @@ kiai time的背景亮度略微降低
         return color;
       }
       function setControlsHidden(hidden) { if (!controls) return; controls.classList.toggle('hidden', !!hidden); canvasArea.style.height = hidden ? '100%' : `calc(100% - ${controls.offsetHeight}px)`; requestAnimationFrame(resizeCanvas); }
+      function updateHelpVisibility() { const visible = (!beatmapData && !gameStarted) ? 'block' : 'none'; if (helpBtn) helpBtn.style.display = visible; if (introImportBtn) introImportBtn.style.display = visible; if (menuBtn) menuBtn.style.display = visible; }
       function updateHelpVisibility() { const visible = (!beatmapData && !gameStarted) ? 'block' : 'none'; if (helpBtn) helpBtn.style.display = visible; if (introImportBtn) introImportBtn.style.display = visible; if (menuBtn) menuBtn.style.display = visible; }
       function updateAutoplayVisibility() { if (autoplayBtn) autoplayBtn.style.display = gameStarted ? 'none' : 'block'; if (autoplayExitBtn) autoplayExitBtn.style.display = (gameStarted && !gameFinished && (autoplayMode || !beatmapData)) ? 'block' : 'none'; }
 
